@@ -114,7 +114,7 @@ export default class Post extends Component {
                             value={this.state.text}
                             onChange={this.handleChange}
                             name="text" 
-                            rows="10" cols="30">
+                            rows="10" cols="60">
                         </textarea>
                     </div>
                     <div>
@@ -137,7 +137,7 @@ export default class Post extends Component {
 
         return (
             <div style={style}>
-                <div><b>{id}번 게시물 입니다.</b></div>
+                <div><b>{id}번 건의사항 입니다.</b></div>
                 <input
                     type="password"
                     placeholder="수정, 삭제를 위한 암호"

@@ -88,9 +88,11 @@ class App extends Component {
   render() 
   {
     const { posts } = this.state;  
-
+    var divStyle = {'text-align': 'center'}
     return (
       <div>
+        <div style={divStyle}>2018 아전모 건의사항</div>    
+        <br/>
         <PostForm
             onCreate={this.handleCreate}
         />

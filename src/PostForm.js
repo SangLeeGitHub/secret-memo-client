@@ -13,6 +13,12 @@ export default class PostForm extends Component {
     handleSubmit = (e) => {
         // 페이지 리로딩 방지
         e.preventDefault();
+        // 빈입력 방지
+        if (this.state.password === '' || this.state.text === '') 
+        {
+            alert("빈입력은 허용되지 않습니다.");
+            return;
+        }
         // 상태값을 onCreate 를 통하여 부모에게 전달
         this.props.onCreate(this.state);
         // 상태 초기화
@@ -22,15 +28,16 @@ export default class PostForm extends Component {
         })
     };
     render() {
+        var formStyle = {'text-align': 'center'}
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} style={formStyle}>
                 <div>
                     <textarea                    
                         placeholder="저장할 내용"
                         value={this.state.text}
                         onChange={this.handleChange}
                         name="text" 
-                        rows="10" cols="30">
+                        rows="15" cols="75">
                     </textarea>
                 </div>
                 <div>
@@ -41,8 +48,8 @@ export default class PostForm extends Component {
                         onChange={this.handleChange}
                         name="password"
                     />
+                    <button type="submit">등록</button>
                 </div>
-                <button type="submit">등록</button>
             </form>
         );
     } 
